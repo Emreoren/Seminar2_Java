@@ -28,13 +28,13 @@ public class Course {
 
 	//setters
 
-	public void setC_ID(long c_ID) {
+	public void setC_ID() {
 		c_ID = counter++;
 		
 	}
 
 	public void setTitle(String inputTitle) {
-		if(inputTitle != null && inputTitle.matches("[A-Za-z()]{4,40}"))  {
+		if(inputTitle != null && inputTitle.matches("[A-Za-z ()]{4,40}"))  {
 		title = inputTitle;	
 	}
 	else {

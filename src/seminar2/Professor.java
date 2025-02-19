@@ -70,8 +70,8 @@ public class Professor {
 	public Professor() {
 		setPID();
 		setDegree(Degree.bsc);
-		setName("test");
-		setSurname("test");
+		setName("Test");
+		setSurname("Test");
 		
 	}
 	
