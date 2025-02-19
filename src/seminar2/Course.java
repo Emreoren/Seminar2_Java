@@ -43,9 +43,16 @@ public class Course {
 	}
 	
 
-	public void setCreditPoints(int inputCreditPoints) {
-		
-	}
+    public void setCreditPoints(int inputCreditPoints) {
+    	if(inputCreditPoints > 0 && inputCreditPoints <= 30) {
+    		creditPoints = inputCreditPoints;
+    	}
+    	else
+    	{
+    		creditPoints = 3;
+    	}
+    }
+    
 
 	public void setProfessor(Professor inputProfessor) {
 		if(inputProfessor != null) {
@@ -59,7 +66,7 @@ public class Course {
 	}
 	
 	//default cons
-	//arg. cons
+	//arg. cons	
 	//toString
 	//other functions
 }
