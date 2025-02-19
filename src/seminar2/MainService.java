@@ -1,7 +1,6 @@
 package seminar2;
 
-import seminar2.Student;
-import seminar2.Degree;
+
 
 public class MainService {
 
