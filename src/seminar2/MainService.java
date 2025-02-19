@@ -32,6 +32,12 @@ public class MainService {
 		
 		Course c3 = new Course("31312312121ghkg1fj1341khbdfdwkjhgf31re73", -4, null);
 		System.out.println(c3);
+		
+		Grade g1 = new Grade();
+		System.out.println(g1);
+		
+ 		Grade g2 = new Grade(4, st2 ,c2); //st2  is john green c2 is java 
+ 		System.out.println(g2);
 				
 	}
 

@@ -66,4 +66,34 @@ public class Grade {
 		}
 	}
 
+	//default cons.
+	public Grade()
+	{
+		setGId();
+		setGrValue(0);
+		setStudent(new Student());
+		setCourse(new Course());
+	}
+	//arg. cons.
+	public Grade(int inputGradeValue, Student inputStudent, Course inputCourse)
+	{
+	setGId();
+	setGrValue(inputGradeValue);
+	setStudent(inputStudent);
+	setCourse(inputCourse);
+	
+	}
+	//toString
+	
+	public String toString () {
+		
+		return gId + ": " + grValue + "-> " 	+ student.getName().charAt(0) + ". " + student.getSurname()	+ " (" + course.getTitle() + ")";
+	}
+	
+	
+	
+	
+	
+	
+	
 }
