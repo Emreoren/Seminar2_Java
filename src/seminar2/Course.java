@@ -66,7 +66,30 @@ public class Course {
 	}
 	
 	//default cons
-	//arg. cons	
+	
+	public Course()
+	{
+		setC_ID();
+		setTitle("Test Course");
+		setCreditPoints(3);
+		setProfessor(new Professor());
+		
+		
+	}
+	//arg. cons
+	public Course(String inputTitle, int inputCreditPoints, Professor inputProfessor)
+	{
+		setC_ID();
+		setTitle(inputTitle);
+		setCreditPoints(inputCreditPoints);
+		setProfessor(inputProfessor);
+		
+	}
 	//toString
+	  public String toString() {
+	    	return c_ID + " " + title + " " + creditPoints + " " 
+	    + professor.getName().charAt(0) + ". " + professor.getSurname();
+	    }
 	//other functions
 }
+
