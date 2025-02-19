@@ -17,7 +17,12 @@ public class MainService {
 		
 		Student st4 = new Student (null, null);
 		System.out.println(st4);
+		
+		Professor p1 = new Professor();
+		System.out.println(p1);
 
+		Professor p2 = new Professor("Memoli", "Oren", Degree.dr);
+		System.out.println(p2);
 	}
 
 }

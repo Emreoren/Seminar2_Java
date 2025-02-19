@@ -67,9 +67,31 @@ public class Professor {
 	}
 
 	//4.default constructor
+	public Professor() {
+		setPID();
+		setDegree(Degree.bsc);
+		setName("test");
+		setSurname("test");
+		
+	}
 	
 	//5.args constructor
+	
+	public Professor(String inputName, String inputSurname, Degree inputDegree) {
+		setPID();
+		setName(inputName);
+		setSurname(inputSurname);
+		setDegree(inputDegree);
+		
+	}
 	//6.toString
+	public String toString() {
+		return pId + ": " + degree +" " + name +" " + surname;
+		
+	}
+	
+	
+	
 	//7.other functions
 	
 }
