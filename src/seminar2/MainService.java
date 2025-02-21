@@ -15,6 +15,7 @@ public class MainService {
 
 	public static void main(String[] args) {
 
+		System.out.println("------------------STUDENTS-------------------");
 		
 		Student st1 = new Student();
 		//System.out.println(st1.toString());
@@ -31,6 +32,8 @@ public class MainService {
 		allStudents.addAll(Arrays.asList(st1, st2, st3, st4));
 		System.out.println(allStudents);
 		
+		System.out.println("------------------PROFESSORS-------------------");
+
 		Professor p1 = new Professor();
 		//System.out.println(p1);
 
@@ -38,7 +41,20 @@ public class MainService {
 		//System.out.println(p2);
 		
 		allProfessors.addAll(Arrays.asList(p1, p2));
+		
+		try
+		{
+			createProfessor("Estere", "Vitola", Degree.mg);
+			createProfessor("Estere", "Vitola", Degree.mg); //this will be exception
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+		
 		System.out.println(allProfessors);
+		
+		System.out.println("------------------COURSES-------------------");
 		
 		Course c1 = new Course();
 		//System.out.println(c1);
@@ -51,6 +67,8 @@ public class MainService {
 		
 		allCourses.addAll(Arrays.asList(c1, c2, c3));
 		System.out.println(allCourses);
+		
+		System.out.println("------------------GRADES-------------------");
 		
 		Grade g1 = new Grade();
 		//System.out.println(g1);
