@@ -61,5 +61,33 @@ public class MainService {
  		allGrades.addAll(Arrays.asList(g1, g2));
 		System.out.println(allGrades);
 	}
+	
+	// CRUD - C - create - R - Retrieve - U - Update - D - Delete
+	
+	public static void createProfessor(String name, String surname, Degree degree) throws Exception{
+		
+		if (name == null || surname == null || degree == null) {
+			throw new Exception("Input parameters cannot be null");
+		}
+		
+		for(Professor tempP : allProfessors) {
+			if(tempP.getName().equals(name)
+					&& tempP.getSurname().equals(surname)
+					&& tempP.getDegree().equals(degree)) 
+			{
+				throw new Exception("This professor is already registered in the system");
+			}
+				
+		}
+		
+		allProfessors.add(new Professor(name,surname,degree));
+		
+		
+	}
+	
+	
+	
+	
+	
 
 }
