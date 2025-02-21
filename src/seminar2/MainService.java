@@ -112,7 +112,7 @@ public class MainService {
 	{
 		if(id < 10000)
 		{	
-			throw new Exception("Id should be in the parameters")
+			throw new Exception("Id should be in the parameters");
 		}
 		
 		for(Professor tempP : allProfessors)
