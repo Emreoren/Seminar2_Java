@@ -3,6 +3,8 @@ package seminar2;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.swing.tree.ExpandVetoException;
+
 public class MainService {
 	
 	private static ArrayList<Student> allStudents = new ArrayList<Student>();
@@ -102,6 +104,31 @@ public class MainService {
 		
 		
 	}
+	
+	
+	//R retrieve
+	
+	public static Professor retrieveProfessorById(long id) throws Exception
+	{
+		if(id < 10000)
+		{	
+			throw new Exception("Id should be in the parameters")
+		}
+		
+		for(Professor tempP : allProfessors)
+		{
+			if(tempP.getpId() == id)
+				return tempP;
+		}
+		throw new Exception("Professor is not found");
+		
+	}
+	
+	//U - Update
+	//function declaration
+	//check id
+	//need to find professor
+	//set the new values for name, surname, degree
 	
 	
 	
