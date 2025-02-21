@@ -191,15 +191,52 @@ public class MainService {
 	
 	
 	//filter out every failed grade
+	
+	
+	public static ArrayList <Grade> filterFailedGrades()
+	{
+		
+		ArrayList<Grade> results = new ArrayList<Grade>();
+		
+		for (Grade tempG : allGrades)
+			if(tempG.getGrValue() < 4)
+			{
+				results.add(tempG);
+			}
+		
+		
+		
+		return results;
+	}	
 	//calculate average grade for spesific student
+	
+	public static float calculateAvgGradeForStudentById(int id) throws Exception
+	{
+		if(id <0)
+		{
+			throw new Exception ("Id is non existent");
+		}
+		
+		int howManyGrades = 0;
+		float sum = 0;
+		
+		for(Grade tempG :allGrades)
+		{
+			if(tempG.getStudent().getStID() == id)
+			{
+				howManyGrades++;
+				sum = sum + tempG.getGrValue();
+			}
+		}
+		
+		return sum/howManyGrades;
+		
+	}
 	//find out the max creditPoint value that is stored in the system
 	//calculate average grade in spesific course
+	//calculate 
 	
 
 	
 	
-	
-	
-	
-
 }
