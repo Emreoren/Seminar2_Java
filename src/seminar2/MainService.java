@@ -3,8 +3,6 @@ package seminar2;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.swing.tree.ExpandVetoException;
-
 public class MainService {
 	
 	private static ArrayList<Student> allStudents = new ArrayList<Student>();
@@ -52,6 +50,9 @@ public class MainService {
 			System.out.println("Retrieve example: " + retrieveProfessorById(10001));//Memoli
 			updateProfessorById(10000, "Vairis", "Caune", Degree.dr);
 			System.out.println("Arrayslist after the update: " +allProfessors);
+			deleteProfessorById(10002);
+			System.out.println("Arraylist after deleting Estere: " + allProfessors);
+			System.out.println("Professors with dr: " + filterProfessorsByDegree(Degree.dr));
 			
 		}
 		catch (Exception e)
@@ -153,13 +154,48 @@ public class MainService {
 		
 		
 	}
+	// D - delete
 	
 	
-	//function declaration
+	public static void deleteProfessorById (int id) throws Exception
+	{
+		
+		Professor foundProfessor = retrieveProfessorById(id);
+		
+		allProfessors.remove(foundProfessor);
+		
+	}
 	
-	//check id
-	//need to find professor
-	//set the new values for name, surname, degree
+	//filter out every professor which degree is dr
+	
+	public static ArrayList <Professor> filterProfessorsByDegree(Degree degree) throws Exception
+	{
+		if(degree == null) 
+		{
+			throw new Exception ("The degree is null");
+		}
+		
+		ArrayList<Professor> results = new ArrayList<Professor>();
+		
+		for(Professor tempP : allProfessors)
+		{
+			if(tempP.getDegree().equals(degree))
+			{
+				results.add(tempP);
+			}
+		}
+		
+		return results;
+	}
+	
+	
+	
+	//filter out every failed grade
+	//calculate average grade for spesific student
+	//find out the max creditPoint value that is stored in the system
+	//calculate average grade in spesific course
+	
+
 	
 	
 	
