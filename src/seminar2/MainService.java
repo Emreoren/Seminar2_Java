@@ -53,6 +53,7 @@ public class MainService {
 			deleteProfessorById(10002);
 			System.out.println("Arraylist after deleting Estere: " + allProfessors);
 			System.out.println("Professors with dr: " + filterProfessorsByDegree(Degree.dr));
+			System.out.println("Average Grade for this guy : " + calculateAvgGradeForStudentById(1));
 			
 		}
 		catch (Exception e)
@@ -228,6 +229,12 @@ public class MainService {
 				sum = sum + tempG.getGrValue();
 			}
 		}
+		
+		if(howManyGrades == 0)
+		{
+			throw new Exception("Student with id: " + id +"has no grades.");
+		}
+		
 		
 		return sum/howManyGrades;
 		
