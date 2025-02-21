@@ -47,7 +47,12 @@ public class MainService {
 		try
 		{
 			createProfessor("Estere", "Vitola", Degree.mg);
-			createProfessor("Estere", "Vitola", Degree.mg); //this will be exception
+			//createProfessor("Estere", "Vitola", Degree.mg); //this will be exception
+			createProfessor("Karlis", "Immers", Degree.mg);
+			System.out.println("Retrieve example: " + retrieveProfessorById(10001));//Memoli
+			updateProfessorById(10000, "Vairis", "Caune", Degree.dr);
+			System.out.println("Arrayslist after the update: " +allProfessors);
+			
 		}
 		catch (Exception e)
 		{
@@ -125,7 +130,33 @@ public class MainService {
 	}
 	
 	//U - Update
+	
+	public static void updateProfessorById(int id, String name, String surname, Degree degree) throws Exception
+	{
+		Professor foundProfessor = retrieveProfessorById(id);
+		
+		if(name != null && !foundProfessor.getName().equals(name))
+		{
+			foundProfessor.setName(name);
+		}
+		
+		if(surname !=null && !foundProfessor.getSurname().equals(surname))
+		{
+			foundProfessor.setSurname(surname);
+		}
+		
+		if(degree != null && !foundProfessor.getDegree().equals(degree))
+		{
+			foundProfessor.setDegree(degree);
+		}
+		
+		
+		
+	}
+	
+	
 	//function declaration
+	
 	//check id
 	//need to find professor
 	//set the new values for name, surname, degree
